@@ -1,0 +1,45 @@
+
+
+URL GOTO=https://dol.beeline.ru/#!/contracts/new/897019918070521533/3886//
+
+SET !VAR2 EVAL("var randomNumber=Math.floor(Math.random()*5 + 7); randomNumber;")
+WAIT SECONDS={{!VAR2}}
+TAG POS=1 TYPE=SPAN ATTR=TXT:Показать<SP>все
+TAG POS=1 TYPE=LI ATTR=TXT:'<SP>ВСЁмоё<SP>2<SP>SZLEGO_2<SP>Минимальный<SP>порог<SP>стар*
+SET !VAR1 EVAL("var randomNumber=Math.floor(Math.random()*5 + 7); randomNumber;")
+WAIT SECONDS={{!VAR1}}
+
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV>DIV>MAIN>DIV>FORM>DIV:nth-of-type(4)>DIV>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV>LABEL" BUTTON=0
+SET !VAR3 EVAL("var randomNumber=Math.floor(Math.random()*10 + 17); randomNumber;")
+WAIT SECONDS={{!VAR3}}
+TAG POS=1 TYPE=BUTTON FORM=NAME:newcontractForm ATTR=TXT:Заполнить<SP>данные
+SET !VAR1 EVAL("var randomNumber=Math.floor(Math.random()*10 + 17); randomNumber;")
+WAIT SECONDS={{!VAR1}}
+TAG POS=3 TYPE=SELECT FORM=NAME:newcontractForm ATTR=TXT:г.пос.дер.с.стан.хут.аул CONTENT=%number:1
+TAG POS=3 TYPE=SELECT FORM=NAME:newcontractForm ATTR=TXT:ул.пр-тпер.ш.туп.пр-дпл.б-рнаб.кв-лалл. CONTENT=%number:1
+TAG POS=3 TYPE=SELECT FORM=NAME:newcontractForm ATTR=TXT:Кв.ОфисКом.а/я CONTENT=%number:1
+'Все ок
+
+'Подключаем наш файл
+SET !DATASOURCE C:\Users\Павел\Desktop\Bоsslike\Data\profile\iMacros\Datasources\1.txt
+'берем данные из первой строки
+ADD !EXTRACT {{!COL1}} 
+SET !DATASOURCE_LINE 1
+SET !DATASOURCE_COLUMNS 10
+
+TAG POS=64 TYPE=INPUT:TEXT FORM=NAME:newcontractForm ATTR=* CONTENT={{!COL1}} 
+
+'Подключаем наш второй файл
+'SET !DATASOURCE  C:\Users\Павел\Desktop\Bоsslike\Data\profile\iMacros\Datasources\1.csv
+'берем данные из первой строки
+'ADD !EXTRACT {{!COL1}} 
+'SET !DATASOURCE_LINE 1
+'SET !DATASOURCE_COLUMNS 10
+'TAG POS=66 TYPE=INPUT:TEXT FORM=NAME:newcontractForm ATTR=* CONTENT={{!COL1}} 
+'SET !VAR1 EVAL("var randomNumber=Math.floor(Math.random()*50 + 1); randomNumber;")
+'TAG POS=67 TYPE=INPUT:TEXT FORM=NAME:newcontractForm ATTR=* CONTENT={{!VAR1}} 
+'SET !VAR2 EVAL("var randomNumber=Math.floor(Math.random()*162 + 1); randomNumber;")
+'TAG POS=69 TYPE=INPUT:TEXT FORM=NAME:newcontractForm ATTR=* CONTENT={{!VAR2}} 
+
+
+TAG POS=1 TYPE=BUTTON FORM=NAME:newcontractForm ATTR=TXT:Сохранить<SP>черновик

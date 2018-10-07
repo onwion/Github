@@ -1,0 +1,9 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+FILTER TYPE=IMAGES STATUS=ON
+TAB T=1
+'URL GOTO=https://ekaterinburg.hh.ru/search/vacancy?items_on_page=1&clusters=true&area=3&enable_snippets=true&text=%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80&no_magic=true&page=9
+CLICK X=391 Y=380
+TAB T=2
+TAB CLOSE
+TAB T=1
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(5)>DIV:nth-of-type(2)>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(5)>DIV>SPAN:nth-of-type(2)>A:nth-of-type(3)" BUTTON=0

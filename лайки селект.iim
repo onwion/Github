@@ -1,0 +1,3 @@
+﻿
+EVENT TYPE=CLICK SELECTOR="#wl_post_actions_wrap>DIV>DIV>DIV>A>DIV" BUTTON=0
+TAG POS=1 TYPE=DIV ATTR=ID:wk_right_arrow

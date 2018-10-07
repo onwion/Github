@@ -1,0 +1,35 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+' Сайт с заданием
+SET !EXTRACT_TEST_POPUP NO
+SET !ERRORIGNORE YES
+TAB T=1
+URL GOTO=https://fastfreelikes.com/index.php?page=get
+'Ждем задания можно не ждать так будет бустре,но с интервалом надежней
+SET !VAR1 EVAL("var randomNumber=Math.floor(Math.random()*10 + 18); randomNumber;")
+WAIT SECONDS={{!VAR1}}
+' Кликаем на задание
+EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(3)>DIV:nth-of-type(4)>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV:nth-of-type(11)>DIV>A>DIV>DIV>IMG" BUTTON=0
+TAB T=2
+'Перехом на Ютуб и ждем пока проиграеться ролик от 15 до 60 секнд
+SET !VAR1 EVAL("var randomNumber=Math.floor(Math.random()*15 + 60); randomNumber;")
+WAIT SECONDS={{!VAR1}}
+'Жмем лайк на ютубе
+EVENT TYPE=CLICK SELECTOR="#watch8-sentiment-actions>SPAN>SPAN>BUTTON" BUTTON=0
+'Нажали на лайк и ждем для без палева
+SET !VAR1 EVAL("var randomNumber=Math.floor(Math.random()*10 + 25); randomNumber;")
+WAIT SECONDS={{!VAR1}}
+' Закрываем окно Ютуба
+TAB CLOSE
+'Кликаем на кнопку с картинко проверить задание
+CLICK X=309 Y=373
+' Ждем от 10 до 17 секунд т.к сайт проверяет за 10 секунд,но лучше перестраховаться,мало ли долго грузиться будет.
+SET !VAR1 EVAL("var randomNumber=Math.floor(Math.random()*10 + 17); randomNumber;")
+WAIT SECONDS={{!VAR1}}
+
+
+
+
+
+
+
+
