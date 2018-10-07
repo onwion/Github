@@ -1,8 +1,0 @@
-﻿CLICK X=387 Y=373
-FILTER TYPE=IMAGES STATUS=OFF
-SET !VAR1 EVAL("var randomNumber=Math.floor(Math.random()*5 + 7); randomNumber;")
-WAIT SECONDS={{!VAR1}}
-TAB T=2
-TAB CLOSE
-TAB T=1
-REFRESH
